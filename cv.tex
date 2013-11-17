@@ -1,0 +1,103 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+%\usepackage{fullpage}
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Michal \textsc{Kawalec}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Phone:}     & \href{tel:+447563242523}{+44 756 324 2523} // \href{tel:+48792819188}{+48 792 81 91 88}\\
+    \textsc{email:}     & \href{mailto:michal@bazzle.me}{michal@bazzle.me} \\
+    \textsc{website:}   & \href{https://bazzle.me}{bazzle.me}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Selected Work Experience}
+\begin{tabular}{r|p{11cm}}
+    \emph{Current} & Web Developer at \textsc{\href{http://www.mtp.pl/en/}{Poznan International Fair}} Ltd \\\textsc{July 2012}&\emph{Lead Full Stack Web Developer}\\&\footnotesize{Lead the creation of a B2B web portal for streamlining exhibitors' application process and to increase economic transparency in Poland. The project is currently available in a closed \(\beta\) at \url{http://strefa-wystawcy.pl} and uses Python (Flask, SqlAlchemy, \ldots), CoffeeScript and C (for extending the Postres database). \newline Also maintained a large ASP.NET MVC stock management software and created various internal applications and services.}\\\multicolumn{2}{c}{} \\
+    \textsc{2011 - 2012} & Web Developer at the \textsc{\href{https://www.eusa.ed.ac.uk/}{University of Edinburgh}} \\&\emph{Full Stack Web Developer}\\&\footnotesize{Built a JavaScript interface using an old static site as a data source. The interface was later used in various places, including for Student Festival showcasing. \newline Designed and implemented a VB.NET \& JS web system for Societies' management as well as an internal asynchronous forms library. Because of a need to manage a lot of badly secured student-run servers, created a basic intrusion detection system and server management tools in Python for EUSA servers.}\\\multicolumn{2}{c}{} \\
+    \textsc{Summer 2011} & Research Summer Student at the \textsc{\href{http://www.ph.ed.ac.uk/}{University of Edinburgh}} \\&\emph{Particle Physics Phenomenology}\\&\footnotesize{Greatly extended the \href{https://yoda.hepforge.org/}{YODA} Data Analysis Library and invented a fastest 2D hashing algorithm in its class. To tests its performance, written a \href{https://github.com/mkawalec/Cern-summer}{small batch system} capable of running particle simulators in parallel on open-access CERN computers. I also created particle analyses for \href{http://rivet.hepforge.org/}{Rivet}, contributed to a now nonexistent plotting package and took part in a Particle Physics Theory Conference at CERN in Geneva presenting my work.}
+\end{tabular}
+
+%Section: Education
+\section{Higher Education}
+\begin{tabular}{rp{11cm}}	
+ \textsc{2009 - 2014}  & Master of Science in \textsc{Mathematical Physics}, \textbf{University of Edinburgh}\\& Thesis: ``Drag reduction in low dimensional model of the transition to turbulence'' \\&\footnotesize{The thesis investigates a novel way of simulating turbulent conditions in shear flow of fluids and looks at potential uses of this technique in fast simulation of fluid behaviour under different conditions. The simulation code is freely available \href{https://github.com/mkawalec/masters}{on github} and it is set up to run both on an open student compute cluster and the \href{http://www.hector.ac.uk/}{HECTOR} supercomputer.} \\
+&\small Advisor: \href{http://www.ph.ed.ac.uk/people/alexander-morozov}{Dr Alexander \textsc{Morozov}}\\
+\end{tabular}
+
+%Section: Social
+\section{Social and Other Activities}
+\begin{tabular}{rp{11cm}}
+    \textsc{From 2006} & Supporter and lecturer in the \href{http://almukantarat.pl/}{Almukantarat Astronomical Club}\\
+    &\footnotesize{Organized science camps and seminars for scientifically gifted youth and gave series of lectures on topics including ``Introduction to parallel programming'', ``Basic Quantum Mechanics'' and ``Calculus''.} \\
+
+    \textsc{From 2012} & Member and supporter of \href{http://nigmalabs.org/}{NigmaLabs}, a hackerspace in Poznan \\
+    \textsc{June 2013} & Main organizer of \href{http://rhok.bazzle.me}{Random Hacks of Kindness Global Event in Poznan}\\
+    &\footnotesize{It was the only RHoK hackathon in Poland, made with the support of multiple Polish NGOs, the \href{http://www.fwioo.pl/}{Polish Free Software Foundation} and \href{http://allegro.pl/}{Allegro.pl} as well as the \href{http://www.rhok.org/}{RHoK foundation itself}. It resulted in multiple projects, some of which are still worked on by the participants.} \\
+
+    \textsc{2012} & Participant in the \href{http://pioneers.io/festival}{Pioneers Festival}\\
+    &\footnotesize{Took part with \textsc{Renter}, which was a ``smart'' QR-code based social library app and achieved a limited success.} \\
+    \textsc{2009} & Winner of a \href{http://www.barcap.com/}{Barclays Capital} programming competition\\
+    &\footnotesize{It was a team competition mostly focusing on Java programming. The prizes included a trip to London and a day spent with the CTO of Barclays Capital, Bryan Boreham.}
+
+
+\end{tabular}
+
+%Section: Languages
+\section{Useful Info}
+\begin{tabular}{rl}
+ Well-known programming languages:& Python, JavaScript, C, CoffeeScript, C++, C\#\\
+ Familiar databases:& PostgreSQL, Redis, MySQL\\
+ Github page:& \href{https://github.com/mkawalec}{Available here}\\
+ Currently favourite piece of code:& the \href{https://github.com/jashkenas/coffee-script}{CoffeeScript compiler}
+\end{tabular}
+
+\end{document}
